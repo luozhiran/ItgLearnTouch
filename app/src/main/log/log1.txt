@@ -1,0 +1,197 @@
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.sup.itg.itglearntouch.touch.TouchView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="30dp"
+            android:background="@android:color/black" />
+
+    </LinearLayout>
+
+按下
+2019-07-12 18:39:44.577 14810-14810/com.sup.itg.itglearntouch E/dispatch  ::  TouchView down: 893.0 1148.0 //执行dispatchTouchEvent();
+2019-07-12 18:39:44.577 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent: TouchView down: 893.0 1148.0 // 从dispatchTouchEvent()内部执行onTouchEvent()进入onTouchEvent()中
+2019-07-12 18:39:44.577 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_DOWN true //在onTouchEvent()中执行ACTION_DOWN，准备退出本身
+2019-07-12 18:39:44.578 14810-14810/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_DOWN true  // 从onTouchEvent()函数退出到dispatchTouchEvent()函数
+
+
+移动
+2019-07-12 18:39:44.593 14810-14810/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 893.0 1148.0
+2019-07-12 18:39:44.593 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 893.0 1148.0
+2019-07-12 18:39:44.593 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:39:44.593 14810-14810/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:39:44.610 14810-14810/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 893.0 1148.0
+2019-07-12 18:39:44.610 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 893.0 1148.0
+2019-07-12 18:39:44.610 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:39:44.610 14810-14810/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:39:44.643 14810-14810/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 892.0 1147.0
+2019-07-12 18:39:44.643 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 892.0 1147.0
+2019-07-12 18:39:44.643 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:39:44.643 14810-14810/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:39:44.659 14810-14810/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 885.6342 1138.5427
+2019-07-12 18:39:44.659 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 885.6342 1138.5427
+2019-07-12 18:39:44.659 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:39:44.659 14810-14810/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+2019-07-12 18:39:44.676 14810-14810/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 866.7756 1116.2828
+2019-07-12 18:39:44.676 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 866.7756 1116.2828
+2019-07-12 18:39:44.676 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:39:44.676 14810-14810/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:39:44.693 14810-14810/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 852.72296 1098.9948
+2019-07-12 18:39:44.693 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 852.72296 1098.9948
+2019-07-12 18:39:44.693 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:39:44.693 14810-14810/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:39:44.709 14810-14810/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 836.9989 1077.9984
+2019-07-12 18:39:44.710 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 836.9989 1077.9984
+2019-07-12 18:39:44.710 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:39:44.710 14810-14810/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:39:44.726 14810-14810/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 820.6736 1052.8777
+2019-07-12 18:39:44.727 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 820.6736 1052.8777
+2019-07-12 18:39:44.727 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:39:44.727 14810-14810/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:39:44.743 14810-14810/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 803.18787 1028.1653
+2019-07-12 18:39:44.743 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 803.18787 1028.1653
+2019-07-12 18:39:44.743 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:39:44.743 14810-14810/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:39:44.760 14810-14810/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 783.33264 1006.4437
+2019-07-12 18:39:44.760 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 783.33264 1006.4437
+2019-07-12 18:39:44.760 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:39:44.760 14810-14810/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:39:44.777 14810-14810/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 764.7602 987.28015
+2019-07-12 18:39:44.777 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 764.7602 987.28015
+2019-07-12 18:39:44.777 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:39:44.777 14810-14810/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:39:44.794 14810-14810/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 748.7098 971.70984
+2019-07-12 18:39:44.794 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 748.7098 971.70984
+2019-07-12 18:39:44.794 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:39:44.794 14810-14810/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:39:44.811 14810-14810/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 736.59515 959.5952
+2019-07-12 18:39:44.811 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 736.59515 959.5952
+2019-07-12 18:39:44.811 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:39:44.811 14810-14810/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:39:44.827 14810-14810/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 726.6007 949.6007
+2019-07-12 18:39:44.827 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 726.6007 949.6007
+2019-07-12 18:39:44.828 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:39:44.828 14810-14810/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:39:44.843 14810-14810/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 718.8518 943.8815
+2019-07-12 18:39:44.844 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 718.8518 943.8815
+2019-07-12 18:39:44.844 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:39:44.844 14810-14810/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:39:44.860 14810-14810/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 711.3575 937.35754
+2019-07-12 18:39:44.861 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 711.3575 937.35754
+2019-07-12 18:39:44.861 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:39:44.861 14810-14810/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:39:44.877 14810-14810/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 703.5457 930.83655
+2019-07-12 18:39:44.877 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 703.5457 930.83655
+2019-07-12 18:39:44.877 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:39:44.877 14810-14810/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:39:44.894 14810-14810/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 693.5062 920.5906
+2019-07-12 18:39:44.894 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 693.5062 920.5906
+2019-07-12 18:39:44.894 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:39:44.894 14810-14810/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:39:44.910 14810-14810/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 684.7124 910.1644
+2019-07-12 18:39:44.911 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 684.7124 910.1644
+2019-07-12 18:39:44.911 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:39:44.911 14810-14810/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:39:44.928 14810-14810/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 673.7587 897.5814
+2019-07-12 18:39:44.928 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 673.7587 897.5814
+2019-07-12 18:39:44.928 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:39:44.929 14810-14810/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:39:44.944 14810-14810/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 659.727 884.53503
+2019-07-12 18:39:44.944 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 659.727 884.53503
+2019-07-12 18:39:44.944 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:39:44.944 14810-14810/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:39:44.960 14810-14810/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 642.1931 874.37805
+2019-07-12 18:39:44.961 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 642.1931 874.37805
+2019-07-12 18:39:44.961 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:39:44.961 14810-14810/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:39:44.977 14810-14810/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 625.30963 864.6548
+2019-07-12 18:39:44.977 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 625.30963 864.6548
+2019-07-12 18:39:44.977 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:39:44.977 14810-14810/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:39:44.994 14810-14810/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 614.5272 857.9164
+2019-07-12 18:39:44.994 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 614.5272 857.9164
+2019-07-12 18:39:44.994 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:39:44.994 14810-14810/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:39:45.010 14810-14810/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 607.69763 853.0232
+2019-07-12 18:39:45.011 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 607.69763 853.0232
+2019-07-12 18:39:45.011 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:39:45.011 14810-14810/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:39:45.027 14810-14810/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 605.0488 847.19543
+2019-07-12 18:39:45.028 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 605.0488 847.19543
+2019-07-12 18:39:45.028 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:39:45.028 14810-14810/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:39:45.044 14810-14810/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 602.25665 861.85266
+2019-07-12 18:39:45.044 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 602.25665 861.85266
+2019-07-12 18:39:45.044 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:39:45.044 14810-14810/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:39:45.053 14810-14810/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 601.0 874.0
+2019-07-12 18:39:45.054 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 601.0 874.0
+2019-07-12 18:39:45.054 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:39:45.054 14810-14810/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+//抬起
+2019-07-12 18:39:45.055 14810-14810/com.sup.itg.itglearntouch E/dispatch  :: TouchView up: 601.0 874.0
+2019-07-12 18:39:45.055 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent: TouchView up: 601.0 874.0
+2019-07-12 18:39:45.055 14810-14810/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_UP true
+2019-07-12 18:39:45.055 14810-14810/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_UP true

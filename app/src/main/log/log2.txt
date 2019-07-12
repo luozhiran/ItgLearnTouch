@@ -1,0 +1,451 @@
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.sup.itg.itglearntouch.touch.TouchLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.sup.itg.itglearntouch.touch.TouchView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="30dp"
+            android:background="@android:color/black" />
+
+    </com.sup.itg.itglearntouch.touch.TouchLinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+父类接收：按下
+2019-07-12 18:56:07.192 18131-18131/com.sup.itg.itglearntouch E/dispatch  ::  TouchLinearLayout down: 673.0 692.0 //进入父view的dispatchTouchEvent()函数， 父view开始分发"按下"事件
+2019-07-12 18:56:07.193 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout down: 673.0 692.0 //父view的onInterceptTouchEvent()函数接收到"按下"，
+2019-07-12 18:56:07.193 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout ACTION_DOWN false//父view的onInterceptTouchEvent()函数不截断"按下"事件
+
+
+2019-07-12 18:56:07.193 18131-18131/com.sup.itg.itglearntouch E/dispatch  ::  TouchView down: 568.0 587.0//父view的dispatchTouchEvent()进入子view的dispatchTouchEvent()【父view的onInterceptTouchEvent()函数不截断】，子view的dispatchTouchEvent()开始分发:"按下"事件
+2019-07-12 18:56:07.194 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent: TouchView down: 568.0 587.0//从子view的dispatchTouchEvent()进入onTouchEvent()函数
+2019-07-12 18:56:07.194 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_DOWN true//子view消费掉"按下"事件
+2019-07-12 18:56:07.194 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_DOWN true//子view的dispatchTouchEvent()函数告诉父view，分发的"按下"事件被消费掉
+
+2019-07-12 18:56:07.195 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchLinearLayout ACTION_DOWN true//父view的dispatchTouchEvent()函数告知他的上层view，“按下”事件被消费了
+
+2019-07-12 18:56:07.214 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchLinearLayout move: 673.0 692.0
+2019-07-12 18:56:07.215 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout move: 673.0 692.0
+2019-07-12 18:56:07.215 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout ACTION_MOVE false
+
+
+2019-07-12 18:56:07.215 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 568.0 587.0
+2019-07-12 18:56:07.215 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 568.0 587.0
+2019-07-12 18:56:07.215 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:56:07.215 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+2019-07-12 18:56:07.216 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchLinearLayout ACTION_MOVE true
+
+2019-07-12 18:56:07.269 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchLinearLayout move: 670.2371 715.1032
+2019-07-12 18:56:07.269 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout move: 670.2371 715.1032
+2019-07-12 18:56:07.269 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout ACTION_MOVE false
+
+
+2019-07-12 18:56:07.270 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 565.2371 610.1032
+2019-07-12 18:56:07.270 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 565.2371 610.1032
+2019-07-12 18:56:07.270 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:56:07.270 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+2019-07-12 18:56:07.270 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchLinearLayout ACTION_MOVE true
+
+2019-07-12 18:56:07.285 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchLinearLayout move: 670.0 767.07996
+2019-07-12 18:56:07.286 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout move: 670.0 767.07996
+2019-07-12 18:56:07.286 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout ACTION_MOVE false
+
+2019-07-12 18:56:07.286 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 565.0 662.07996
+2019-07-12 18:56:07.286 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 565.0 662.07996
+2019-07-12 18:56:07.286 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:56:07.287 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:56:07.287 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchLinearLayout ACTION_MOVE true
+
+2019-07-12 18:56:07.302 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchLinearLayout move: 678.6037 825.2731
+2019-07-12 18:56:07.303 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout move: 678.6037 825.2731
+2019-07-12 18:56:07.303 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout ACTION_MOVE false
+
+
+2019-07-12 18:56:07.303 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 573.6037 720.2731
+2019-07-12 18:56:07.304 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 573.6037 720.2731
+2019-07-12 18:56:07.304 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:56:07.304 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:56:07.304 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchLinearLayout ACTION_MOVE true
+
+2019-07-12 18:56:07.319 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchLinearLayout move: 687.62244 869.5714
+2019-07-12 18:56:07.319 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout move: 687.62244 869.5714
+2019-07-12 18:56:07.320 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout ACTION_MOVE false
+
+
+2019-07-12 18:56:07.320 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 582.62244 764.5714
+2019-07-12 18:56:07.321 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 582.62244 764.5714
+2019-07-12 18:56:07.321 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:56:07.321 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:56:07.321 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchLinearLayout ACTION_MOVE true
+
+2019-07-12 18:56:07.336 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchLinearLayout move: 698.38074 917.16907
+2019-07-12 18:56:07.336 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout move: 698.38074 917.16907
+2019-07-12 18:56:07.336 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout ACTION_MOVE false
+
+
+2019-07-12 18:56:07.337 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 593.38074 812.16907
+2019-07-12 18:56:07.337 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 593.38074 812.16907
+2019-07-12 18:56:07.337 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:56:07.337 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:56:07.337 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchLinearLayout ACTION_MOVE true
+
+2019-07-12 18:56:07.353 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchLinearLayout move: 705.18945 949.4946
+2019-07-12 18:56:07.353 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout move: 705.18945 949.4946
+2019-07-12 18:56:07.353 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout ACTION_MOVE false
+
+
+2019-07-12 18:56:07.353 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 600.18945 844.4946
+2019-07-12 18:56:07.354 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 600.18945 844.4946
+2019-07-12 18:56:07.354 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:56:07.354 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:56:07.354 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchLinearLayout ACTION_MOVE true
+
+2019-07-12 18:56:07.369 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchLinearLayout move: 712.8705 986.00415
+2019-07-12 18:56:07.370 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout move: 712.8705 986.00415
+2019-07-12 18:56:07.370 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout ACTION_MOVE false
+
+
+2019-07-12 18:56:07.370 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 607.8705 881.00415
+2019-07-12 18:56:07.370 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 607.8705 881.00415
+2019-07-12 18:56:07.370 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:56:07.370 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:56:07.370 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchLinearLayout ACTION_MOVE true
+
+2019-07-12 18:56:07.386 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchLinearLayout move: 719.21436 1023.48254
+2019-07-12 18:56:07.386 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout move: 719.21436 1023.48254
+2019-07-12 18:56:07.386 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout ACTION_MOVE false
+
+
+2019-07-12 18:56:07.387 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 614.21436 918.48254
+2019-07-12 18:56:07.387 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 614.21436 918.48254
+2019-07-12 18:56:07.387 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:56:07.387 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:56:07.387 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchLinearLayout ACTION_MOVE true
+
+2019-07-12 18:56:07.404 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchLinearLayout move: 725.70654 1057.9594
+2019-07-12 18:56:07.404 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout move: 725.70654 1057.9594
+2019-07-12 18:56:07.404 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout ACTION_MOVE false
+
+
+2019-07-12 18:56:07.405 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 620.70654 952.95935
+2019-07-12 18:56:07.405 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 620.70654 952.95935
+2019-07-12 18:56:07.405 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:56:07.405 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:56:07.405 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchLinearLayout ACTION_MOVE true
+
+2019-07-12 18:56:07.419 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchLinearLayout move: 731.17096 1085.9686
+2019-07-12 18:56:07.420 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout move: 731.17096 1085.9686
+2019-07-12 18:56:07.420 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout ACTION_MOVE false
+
+
+2019-07-12 18:56:07.420 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 626.17096 980.9686
+2019-07-12 18:56:07.420 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 626.17096 980.9686
+2019-07-12 18:56:07.420 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:56:07.420 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:56:07.420 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchLinearLayout ACTION_MOVE true
+
+2019-07-12 18:56:07.436 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchLinearLayout move: 735.3762 1111.3215
+2019-07-12 18:56:07.436 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout move: 735.3762 1111.3215
+2019-07-12 18:56:07.436 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout ACTION_MOVE false
+
+
+2019-07-12 18:56:07.436 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 630.3762 1006.32153
+2019-07-12 18:56:07.437 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 630.3762 1006.32153
+2019-07-12 18:56:07.437 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:56:07.437 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:56:07.437 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchLinearLayout ACTION_MOVE true
+
+2019-07-12 18:56:07.453 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchLinearLayout move: 739.93915 1133.0696
+2019-07-12 18:56:07.453 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout move: 739.93915 1133.0696
+2019-07-12 18:56:07.453 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout ACTION_MOVE false
+
+
+2019-07-12 18:56:07.453 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 634.93915 1028.0696
+2019-07-12 18:56:07.453 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 634.93915 1028.0696
+2019-07-12 18:56:07.454 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:56:07.454 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:56:07.454 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchLinearLayout ACTION_MOVE true
+
+2019-07-12 18:56:07.469 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchLinearLayout move: 742.89923 1147.5464
+2019-07-12 18:56:07.469 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout move: 742.89923 1147.5464
+2019-07-12 18:56:07.470 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout ACTION_MOVE false
+
+
+2019-07-12 18:56:07.470 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 637.89923 1042.5464
+2019-07-12 18:56:07.470 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 637.89923 1042.5464
+2019-07-12 18:56:07.470 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:56:07.470 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:56:07.470 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchLinearLayout ACTION_MOVE true
+
+2019-07-12 18:56:07.486 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchLinearLayout move: 746.1591 1160.057
+2019-07-12 18:56:07.486 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout move: 746.1591 1160.057
+2019-07-12 18:56:07.486 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout ACTION_MOVE false
+
+
+2019-07-12 18:56:07.486 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 641.1591 1055.057
+2019-07-12 18:56:07.486 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 641.1591 1055.057
+2019-07-12 18:56:07.486 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:56:07.487 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:56:07.487 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchLinearLayout ACTION_MOVE true
+
+2019-07-12 18:56:07.503 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchLinearLayout move: 748.19556 1171.3688
+2019-07-12 18:56:07.503 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout move: 748.19556 1171.3688
+2019-07-12 18:56:07.503 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout ACTION_MOVE false
+
+
+2019-07-12 18:56:07.503 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 643.19556 1066.3688
+2019-07-12 18:56:07.503 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 643.19556 1066.3688
+2019-07-12 18:56:07.503 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:56:07.503 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:56:07.503 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchLinearLayout ACTION_MOVE true
+
+2019-07-12 18:56:07.520 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchLinearLayout move: 749.0 1182.8617
+2019-07-12 18:56:07.520 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout move: 749.0 1182.8617
+2019-07-12 18:56:07.520 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout ACTION_MOVE false
+
+
+2019-07-12 18:56:07.520 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 644.0 1077.8617
+2019-07-12 18:56:07.520 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 644.0 1077.8617
+2019-07-12 18:56:07.520 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:56:07.520 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:56:07.520 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchLinearLayout ACTION_MOVE true
+
+2019-07-12 18:56:07.536 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchLinearLayout move: 749.0 1197.167
+2019-07-12 18:56:07.536 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout move: 749.0 1197.167
+2019-07-12 18:56:07.537 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout ACTION_MOVE false
+
+
+2019-07-12 18:56:07.537 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 644.0 1092.167
+2019-07-12 18:56:07.537 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 644.0 1092.167
+2019-07-12 18:56:07.537 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:56:07.537 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:56:07.537 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchLinearLayout ACTION_MOVE true
+
+2019-07-12 18:56:07.553 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchLinearLayout move: 752.1773 1210.7092
+2019-07-12 18:56:07.553 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout move: 752.1773 1210.7092
+2019-07-12 18:56:07.553 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout ACTION_MOVE false
+
+
+2019-07-12 18:56:07.553 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 647.1773 1105.7092
+2019-07-12 18:56:07.554 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 647.1773 1105.7092
+2019-07-12 18:56:07.554 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:56:07.554 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:56:07.554 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchLinearLayout ACTION_MOVE true
+
+2019-07-12 18:56:07.570 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchLinearLayout move: 753.7257 1224.8057
+2019-07-12 18:56:07.570 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout move: 753.7257 1224.8057
+2019-07-12 18:56:07.570 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout ACTION_MOVE false
+
+
+2019-07-12 18:56:07.570 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 648.7257 1119.8057
+2019-07-12 18:56:07.570 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 648.7257 1119.8057
+2019-07-12 18:56:07.570 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:56:07.571 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:56:07.571 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchLinearLayout ACTION_MOVE true
+
+2019-07-12 18:56:07.586 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchLinearLayout move: 755.3473 1236.4309
+2019-07-12 18:56:07.587 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout move: 755.3473 1236.4309
+2019-07-12 18:56:07.587 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout ACTION_MOVE false
+
+
+2019-07-12 18:56:07.587 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 650.3473 1131.4309
+2019-07-12 18:56:07.587 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 650.3473 1131.4309
+2019-07-12 18:56:07.587 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:56:07.587 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:56:07.587 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchLinearLayout ACTION_MOVE true
+
+2019-07-12 18:56:07.603 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchLinearLayout move: 756.9794 1248.8347
+2019-07-12 18:56:07.603 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout move: 756.9794 1248.8347
+2019-07-12 18:56:07.603 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout ACTION_MOVE false
+
+
+2019-07-12 18:56:07.604 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 651.9794 1143.8347
+2019-07-12 18:56:07.604 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 651.9794 1143.8347
+2019-07-12 18:56:07.604 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:56:07.604 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:56:07.604 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchLinearLayout ACTION_MOVE true
+
+2019-07-12 18:56:07.620 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchLinearLayout move: 758.0 1261.8949
+2019-07-12 18:56:07.620 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout move: 758.0 1261.8949
+2019-07-12 18:56:07.620 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout ACTION_MOVE false
+
+
+2019-07-12 18:56:07.620 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 653.0 1156.8949
+2019-07-12 18:56:07.620 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 653.0 1156.8949
+2019-07-12 18:56:07.620 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:56:07.621 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:56:07.621 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchLinearLayout ACTION_MOVE true
+
+2019-07-12 18:56:07.637 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchLinearLayout move: 759.2386 1274.9088
+2019-07-12 18:56:07.637 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout move: 759.2386 1274.9088
+2019-07-12 18:56:07.637 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout ACTION_MOVE false
+
+
+2019-07-12 18:56:07.637 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 654.2386 1169.9088
+2019-07-12 18:56:07.637 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 654.2386 1169.9088
+2019-07-12 18:56:07.637 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:56:07.637 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:56:07.637 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchLinearLayout ACTION_MOVE true
+
+2019-07-12 18:56:07.653 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchLinearLayout move: 760.0 1284.2089
+2019-07-12 18:56:07.653 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout move: 760.0 1284.2089
+2019-07-12 18:56:07.653 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout ACTION_MOVE false
+
+
+2019-07-12 18:56:07.654 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 655.0 1179.2089
+2019-07-12 18:56:07.654 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 655.0 1179.2089
+2019-07-12 18:56:07.654 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:56:07.654 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:56:07.654 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchLinearLayout ACTION_MOVE true
+
+2019-07-12 18:56:07.670 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchLinearLayout move: 761.0 1292.0006
+2019-07-12 18:56:07.670 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout move: 761.0 1292.0006
+2019-07-12 18:56:07.670 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout ACTION_MOVE false
+
+
+2019-07-12 18:56:07.670 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 656.0 1187.0006
+2019-07-12 18:56:07.671 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 656.0 1187.0006
+2019-07-12 18:56:07.671 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:56:07.671 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:56:07.671 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchLinearLayout ACTION_MOVE true
+
+2019-07-12 18:56:07.687 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchLinearLayout move: 761.0 1298.494
+2019-07-12 18:56:07.687 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout move: 761.0 1298.494
+2019-07-12 18:56:07.687 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout ACTION_MOVE false
+
+
+2019-07-12 18:56:07.687 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 656.0 1193.494
+2019-07-12 18:56:07.687 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 656.0 1193.494
+2019-07-12 18:56:07.687 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:56:07.687 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:56:07.687 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchLinearLayout ACTION_MOVE true
+
+2019-07-12 18:56:07.703 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchLinearLayout move: 761.0 1304.2242
+2019-07-12 18:56:07.704 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout move: 761.0 1304.2242
+2019-07-12 18:56:07.704 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout ACTION_MOVE false
+
+
+2019-07-12 18:56:07.704 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 656.0 1199.2242
+2019-07-12 18:56:07.704 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 656.0 1199.2242
+2019-07-12 18:56:07.704 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:56:07.704 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:56:07.704 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchLinearLayout ACTION_MOVE true
+
+2019-07-12 18:56:07.720 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchLinearLayout move: 759.6186 1310.5255
+2019-07-12 18:56:07.720 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout move: 759.6186 1310.5255
+2019-07-12 18:56:07.720 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout ACTION_MOVE false
+
+
+2019-07-12 18:56:07.720 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 654.6186 1205.5255
+2019-07-12 18:56:07.721 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 654.6186 1205.5255
+2019-07-12 18:56:07.721 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:56:07.721 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:56:07.721 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchLinearLayout ACTION_MOVE true
+
+2019-07-12 18:56:07.737 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchLinearLayout move: 758.98395 1322.1287
+2019-07-12 18:56:07.737 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout move: 758.98395 1322.1287
+2019-07-12 18:56:07.737 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout ACTION_MOVE false
+
+
+2019-07-12 18:56:07.737 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 653.98395 1217.1287
+2019-07-12 18:56:07.737 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 653.98395 1217.1287
+2019-07-12 18:56:07.737 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:56:07.737 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:56:07.737 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchLinearLayout ACTION_MOVE true
+
+2019-07-12 18:56:07.752 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchLinearLayout move: 759.0 1322.0
+2019-07-12 18:56:07.752 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout move: 759.0 1322.0
+2019-07-12 18:56:07.752 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout ACTION_MOVE false
+
+
+2019-07-12 18:56:07.752 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchView move: 654.0 1217.0
+2019-07-12 18:56:07.752 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent: TouchView move: 654.0 1217.0
+2019-07-12 18:56:07.752 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_MOVE true
+2019-07-12 18:56:07.753 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_MOVE true
+
+
+2019-07-12 18:56:07.753 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchLinearLayout ACTION_MOVE true
+
+2019-07-12 18:56:07.753 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchLinearLayout up: 759.0 1322.0
+2019-07-12 18:56:07.753 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout up: 759.0 1322.0
+2019-07-12 18:56:07.753 18131-18131/com.sup.itg.itglearntouch E/onInterceptTouchEvent: TouchLinearLayout ACTION_UP false
+
+
+2019-07-12 18:56:07.754 18131-18131/com.sup.itg.itglearntouch E/dispatch  :: TouchView up: 654.0 1217.0
+2019-07-12 18:56:07.754 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent: TouchView up: 654.0 1217.0
+2019-07-12 18:56:07.754 18131-18131/com.sup.itg.itglearntouch E/onTouchEvent :: TouchView ACTION_UP true
+2019-07-12 18:56:07.754 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchView ACTION_UP true
+
+2019-07-12 18:56:07.754 18131-18131/com.sup.itg.itglearntouch E/dispatch :: TouchLinearLayout ACTION_UP true
